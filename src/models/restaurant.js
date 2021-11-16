@@ -22,14 +22,16 @@ module.exports = (sequelize, DataTypes) => {
     phone: DataTypes.STRING,
     address: DataTypes.STRING,
     restaurantImage: DataTypes.STRING,
-    vendorUserId: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: VendorUser,
-        key: 'id'
-      },
-      onUpdate: 'cascade',
-    }
+    // vendorUserId: {
+    //   type: DataTypes.INTEGER,
+    //   unique: true,
+    //   references: {
+    //     model: VendorUser,
+    //     key: 'id'
+    //   },
+    //   onUpdate: 'cascade',
+    //   onDelete: 'cascade',
+    // }
   }, {
     sequelize,
     modelName: 'Restaurant',

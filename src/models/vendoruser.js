@@ -6,7 +6,6 @@ const {
 
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const Restaurant = require('./restaurant');
 
 module.exports = (sequelize, DataTypes) => {
   class VendorUser extends Model {
@@ -16,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      // 
     }
 
     getSignedJwtToken() {

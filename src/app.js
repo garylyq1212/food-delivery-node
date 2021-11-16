@@ -50,6 +50,7 @@ app.use('/api/v1/restaurants', restaurants);
 app.listen(PORT, async () => {
     try {
         await sequelize.authenticate();
+        await sequelize.sync();
 
         console.log('DB connect successfully');
     } catch (error) {

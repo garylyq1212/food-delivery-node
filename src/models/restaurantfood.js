@@ -10,22 +10,22 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.belongsTo(models.Restaurant, { foreignKey: 'restaurant_id', as: 'restaurant' });
     }
   };
   RestaurantFood.init({
     name: DataTypes.STRING,
     price: DataTypes.DECIMAL(10, 2),
     description: DataTypes.STRING,
-    restaurantId: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'restaurants',
-        key: 'id',
-      },
-      onUpdate: 'cascade',
-      onDelete: 'cascade',
-    },
+    // restaurantId: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'restaurants',
+    //     key: 'id',
+    //   },
+    //   onUpdate: 'cascade',
+    //   onDelete: 'cascade',
+    // },
     foodImage: DataTypes.STRING,
   }, {
     sequelize,
