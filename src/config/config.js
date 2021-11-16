@@ -22,12 +22,11 @@ module.exports = {
     db_port: process.env.DB_PORT,
   },
   production: {
-    dialect: "mysql",
-    // use_env_variable: "DATABASE_URL",
     username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB,
     host: process.env.DB_HOST,
+    dialect: "mysql",
     db_port: process.env.DB_PORT,
   }
 }[env];
